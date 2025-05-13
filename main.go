@@ -34,7 +34,7 @@ func (b *Backend) IsAlive() bool {
 type LoadBalancer struct {
 	backends []*Backend
 	current  int
-	mu       sync.RWMutex
+	mu       sync.Mutex
 }
 
 // NextBackend returns the next available backend to handle the request
